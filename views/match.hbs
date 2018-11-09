@@ -1,0 +1,49 @@
+<h1>Example App: Home</h1>
+{{!-- 
+{{#each llaves}}
+  <p>{{@index}}. {{this}}</p>
+{{/each}}
+
+{{#each basicFields}}
+  <p>{{@index}}. {{this}}</p>
+{{/each}}
+
+{{#each extraFields}}
+  <p>{{@index}}. {{this}}</p>
+{{/each}} --}}
+
+<form action="/match" method="post" >
+
+    {{#each basicFields as |bF|}}
+        <label for={{bF}}>{{bF}}</label>
+        <select id={{bF}} name={{bF}}>
+            {{#each ../llaves }}
+                <option value={{this}}>{{this}}</option>
+            {{/each}}
+        </select>
+    {{/each}}
+   
+    {{!-- <ul>
+        {{#basicFields}}
+            <li>
+                <label for={{this}}>{{this}}</label>
+                <select id={{this}} name="{{this}}"></select>
+                <ol>
+                    {{#llaves as |test|}}
+                        <li><option value={{test}}>{{test}}</option></li>
+                    {{/llaves}}
+                </ol>
+                </select>
+            </li>
+        {{/basicFields}}
+    </ul> --}}
+    {{!-- <label for="phone number">Some Label</label>
+
+    <select id="phone number" name="phone number">
+
+    {{#each llaves}}
+        <option value={{this}}>{{this}}</option>
+    {{/each}}
+       
+    </select> --}}
+</form>
